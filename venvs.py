@@ -189,3 +189,5 @@ if cmd == 'help':
     # Create shortcut in terminal
     # alias venvs="python3 /Users/*****/python_stack/python/venvs.py"
 
+    # To make permament alias
+    # vi ~/.bash_profile
