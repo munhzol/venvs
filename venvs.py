@@ -5,8 +5,7 @@ import subprocess
 import os
 import json
 
-import applescript
-
+# import applescript
 
 # get current working path
 current_path = os.getcwd()
@@ -87,11 +86,11 @@ if cmd == 'activate':
             quit()
 
         # new Terminal window
-        script=f"""tell application "Terminal"
-            do script "source {venvs[venvID]['path']}/{venvs[venvID]['name']}/bin/activate"
-            activate
-            end tell
-        """
+        # script=f"""tell application "Terminal"
+        #     do script "source {venvs[venvID]['path']}/{venvs[venvID]['name']}/bin/activate"
+        #     activate
+        #     end tell
+        # """
 
         # script=f"""execCmd("source {venvs[venvID]['path']}/{venvs[venvID]['name']}/bin/activate",1)
         #         on execCmd(cmd, pause)
@@ -154,17 +153,28 @@ if cmd == 'activate':
 
         # new Terminal window
         
-        script=f"""
-            if application "Terminal" is running then
-                tell application "System Events"
-                    keystroke "source {venvs[venvID]['path']}/{venvs[venvID]['name']}/bin/activate"
-                    keystroke return
-                end tell
-            end if
-        """
+        # script=f"""
+        #     if application "Terminal" is running then
+        #         tell application "System Events"
+        #             keystroke "source {venvs[venvID]['path']}/{venvs[venvID]['name']}/bin/activate"
+        #             delay 1
+        #             keystroke return
+        #         end tell
+        #     end if
+        # """
 
-        applescript.run(script)
-        #print('DONE!')
+        # script=f"""tell application "System Events"
+                
+        #         keystroke "(text returned of aPassword)" & return
+        #         delay 1
+        #         keystroke return
+        #         end tell
+        # """
+        # applescript.run(script)
+
+        subprocess.call(["osascript","-e",f'tell application "System Events" to keystroke "source {venvs[venvID]["path"]}/{venvs[venvID]["name"]}/bin/activate"']) 
+        subprocess.call(["osascript","-e",'tell application "System Events" to  keystroke return ']) 
+
         quit()
 
 
