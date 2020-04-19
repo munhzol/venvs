@@ -1,0 +1,1 @@
+[{"name": "newVenv", "path": "/Users/munhzol/Documents/DoJo/python_stack/python"}, {"name": "django-test", "path": "/Users/munhzol/Documents/DoJo/python_stack/my_env"}, {"name": "django-venv", "path": "/Users/munhzol/Documents/DoJo/python_stack/my_env"}, {"name": "firebase-test", "path": "/Users/munhzol/Documents/DoJo/python_stack/python/firebase"}]
